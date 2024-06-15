@@ -16,12 +16,23 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         onTextChanged()
+        switchLan()
     }
 
     private fun onTextChanged(){
         binding.apply {
             inputText.doAfterTextChanged {
                 outputText.text = inputText.text
+            }
+        }
+    }
+
+    private fun switchLan(){
+        binding.apply {
+            btnSwitch.setOnClickListener{
+                val temp = tvEn.text
+                tvEn.text = tvBali.text
+                tvBali.text = temp.toString()
             }
         }
     }
