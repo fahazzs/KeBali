@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">KeBali</string>
+    <string name="baliness">Bali</string>
+    <string name="english">English</string>
+    <string name="tittle">KeBali</string>
+    <string name="hint_input">Enter text here</string>
+    <string name="hint_output">Translation</string>
 </resources>
