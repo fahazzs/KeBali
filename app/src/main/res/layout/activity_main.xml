@@ -33,7 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_swap_horiz"
-        android:backgroundTint="@color/white"
+        android:backgroundTint="@android:color/transparent"
         android:layout_marginTop="19dp"
         app:layout_constraintStart_toEndOf="@id/tvEn"
         app:layout_constraintEnd_toStartOf="@id/tvBali"
@@ -55,7 +55,6 @@
         android:id="@+id/layoutInput"
         android:layout_width="0dp"
         android:layout_height="150dp"
-        android:hint="@string/hint_input"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:padding="5dp"
         android:layout_marginStart="12dp"
@@ -65,33 +64,30 @@
         app:layout_constraintEnd_toEndOf="parent">
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/inputText"
+            android:hint="@string/hint_input"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:focusable="true"
             android:ems="10"
             android:importantForAutofill="no"
             android:inputType="textImeMultiLine|textMultiLine"
             android:textColor="@color/black"
             android:textSize="14sp"/>
     </com.google.android.material.textfield.TextInputLayout>
-    <com.google.android.material.textfield.TextInputLayout
+    <TextView
+        android:id="@+id/outputText"
         android:layout_width="0dp"
         android:layout_height="150dp"
         android:hint="@string/hint_output"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:padding="5dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginEnd="12dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/baseline_rectangle_24"
         app:layout_constraintTop_toBottomOf="@id/layoutInput"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/outputText"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:inputType="none"
-            android:textColor="@color/black"
-            android:textSize="14sp"/>
-    </com.google.android.material.textfield.TextInputLayout>
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
 
 
 
