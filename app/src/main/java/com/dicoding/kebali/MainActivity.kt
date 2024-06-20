@@ -1,4 +1,4 @@
-package com.example.kebali
+package com.dicoding.kebali
 
 import android.os.Bundle
 import androidx.navigation.ui.setupWithNavController
