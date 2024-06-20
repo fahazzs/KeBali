@@ -1,8 +1,10 @@
 <resources>
     <string name="app_name">KeBali</string>
-    <string name="baliness">Bali</string>
-    <string name="english">English</string>
-    <string name="tittle">KeBali</string>
-    <string name="hint_input">Enter text here</string>
-    <string name="hint_output">Translation</string>
+    <string name="translate">Translate</string>
+    <string name="masukkan_api_key">Masukkan API Key</string>
+    <string name="masukkan_api_key_untuk_melihat_usage">Masukkan API Key untuk melihat usage</string>
+    <string name="deepl_api_key">DeepL API Key</string>
+    <string name="type_to_translate">Type to translate...</string>
+    <string name="usage">Usage</string>
+    <string name="hint_output">Translation...</string>
 </resources>

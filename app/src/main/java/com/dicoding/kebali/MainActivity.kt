@@ -1,38 +1,41 @@
 package com.dicoding.kebali
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.core.widget.doAfterTextChanged
-import androidx.core.widget.doOnTextChanged
-import com.dicoding.kebali.databinding.ActivityMainBinding
+import androidx.navigation.ui.setupWithNavController
+import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.fragment.NavHostFragment
+import com.example.kebali.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        onTextChanged()
-        switchLan()
+        setupBottomNavigationView()
     }
 
-    private fun onTextChanged(){
-        binding.apply {
-            inputText.doAfterTextChanged {
-                outputText.text = inputText.text
-            }
-        }
-    }
+    private fun setupBottomNavigationView() {
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.nav_host) as NavHostFragment
+        val navController = navHostFragment.navController
 
-    private fun switchLan(){
-        binding.apply {
-            btnSwitch.setOnClickListener{
-                val temp = tvEn.text
-                tvEn.text = tvBali.text
-                tvBali.text = temp.toString()
+        binding.bottomNavigationView.setupWithNavController(navController)
+
+        binding.bottomNavigationView.setOnItemSelectedListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.menu_translate -> {
+                    navController.navigate(R.id.navigation_translate)
+                    true
+                }
+
+                R.id.menu_usage -> {
+                    navController.navigate(R.id.navigation_usage)
+                    true
+                }
+                else -> false
             }
         }
     }

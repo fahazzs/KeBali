@@ -6,84 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/tvTittle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/tittle"
-        android:textSize="40sp"
-        android:layout_marginTop="12dp"
-        app:layout_constraintStart_toStartOf="parent"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/nav_host"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
-    <TextView
-        android:id="@+id/tvEn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/english"
-        android:textSize="15sp"
-        android:layout_marginTop="28dp"
-        android:layout_marginStart="115dp"
-        app:layout_constraintTop_toBottomOf="@id/tvTittle"
-        app:layout_constraintStart_toStartOf="parent"/>
-
-    <ImageButton
-        android:id="@+id/btnSwitch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_swap_horiz"
-        android:backgroundTint="@android:color/transparent"
-        android:layout_marginTop="19dp"
-        app:layout_constraintStart_toEndOf="@id/tvEn"
-        app:layout_constraintEnd_toStartOf="@id/tvBali"
-        app:layout_constraintTop_toBottomOf="@id/tvTittle"
-        tools:ignore="ContentDescription" />
-
-    <TextView
-        android:id="@+id/tvBali"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/baliness"
-        android:textSize="15sp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="115dp"
-        app:layout_constraintTop_toBottomOf="@id/tvTittle"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/layoutInput"
-        android:layout_width="0dp"
-        android:layout_height="150dp"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:padding="5dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginEnd="12dp"
-        app:layout_constraintTop_toBottomOf="@id/btnSwitch"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/inputText"
-            android:hint="@string/hint_input"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:focusable="true"
-            android:ems="10"
-            android:importantForAutofill="no"
-            android:inputType="textImeMultiLine|textMultiLine"
-            android:textColor="@color/black"
-            android:textSize="14sp"/>
-    </com.google.android.material.textfield.TextInputLayout>
-    <TextView
-        android:id="@+id/outputText"
-        android:layout_width="0dp"
-        android:layout_height="150dp"
-        android:hint="@string/hint_output"
-        android:padding="5dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/baseline_rectangle_24"
-        app:layout_constraintTop_toBottomOf="@id/layoutInput"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/nav_graph" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:menu="@menu/bottom_nav_menu" />
 </androidx.constraintlayout.widget.ConstraintLayout>
