@@ -10,4 +10,9 @@
         <item name="colorOnSecondary">@color/white</item>
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
     </style>
+    <style name="Theme.App.SplashScreen" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/blue_sky</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_apps</item>
+        <item name="postSplashScreenTheme">@style/Theme.KeBali</item>
+    </style>
 </resources>
